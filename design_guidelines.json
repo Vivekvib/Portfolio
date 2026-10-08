@@ -1,0 +1,270 @@
+{
+  "project_metadata": {
+    "title": "Vivek Nishad — Award-Worthy CS (Hons) Graduate Portfolio",
+    "app_type": "portfolio",
+    "target_vibe": "Dark, Cinematic & Immersive (Awwwards SOTD / minhpham.design inspired)",
+    "designer_identity": "E1 The Anti-AI Designer",
+    "art_direction": "Swiss High-Contrast Display Typography mixed with Cinematic Dark Obsidian Luxury and Tactile Code Terminal details. High motion intensity, line-by-line kinetic hero reveal, smooth Lenis inertia, editorial bento project showcase, custom cursor, and subtle noise grain overlay."
+  },
+  "typography": {
+    "google_fonts_url": "https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@500;700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap",
+    "font_family_heading": "'Cabinet Grotesk', sans-serif",
+    "font_family_body": "'Plus Jakarta Sans', sans-serif",
+    "font_family_mono": "'JetBrains Mono', monospace",
+    "scale": {
+      "h1_hero": "text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[0.95]",
+      "h2_section": "text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-none",
+      "h3_card": "text-xl sm:text-2xl font-bold tracking-tight",
+      "subtitle": "text-lg sm:text-xl font-normal text-slate-400 leading-relaxed",
+      "body": "text-base font-normal text-slate-300 leading-relaxed",
+      "mono_label": "text-xs uppercase tracking-[0.25em] font-mono text-orange-500 font-medium",
+      "code_snippet": "text-xs font-mono text-slate-400"
+    },
+    "rules": [
+      "DO NOT use Inter or standard Roboto for headings — headings MUST use Cabinet Grotesk with tracking-tight or tracking-tighter.",
+      "All eyebrow tags, status chips, section counters (e.g., 01 // PROJECTS), and metadata MUST use JetBrains Mono in uppercase with wide tracking.",
+      "Headings over 32px MUST use tight line-height (leading-none or leading-[0.95]) to eliminate empty vertical spaces.",
+      "Body text MUST remain left-aligned for maximum scanability and editorial legibility."
+    ]
+  },
+  "colors": {
+    "archetype": "Architectural Dark Obsidian & Kinetic Warm Ember",
+    "palette": {
+      "background_main": "#08080A",
+      "background_card": "#101014",
+      "background_card_hover": "#16161C",
+      "surface_elevated": "#1C1C24",
+      "border_subtle": "rgba(255, 255, 255, 0.08)",
+      "border_highlight": "rgba(255, 255, 255, 0.2)",
+      "text_primary": "#F4F4F7",
+      "text_secondary": "#9E9EA9",
+      "text_muted": "#5C5C66",
+      "accent_primary": "#FF4F00",
+      "accent_primary_glow": "rgba(255, 79, 0, 0.25)",
+      "accent_secondary": "#FF8700",
+      "accent_emerald": "#10B981"
+    },
+    "rules": [
+      "Never use pure black #000000; use #08080A tinted with cold indigo/obsidian shadow.",
+      "Limit accent color (#FF4F00) to interactive elements, status beacons, focus lines, and kinetic highlights. Never flood background with full-screen gradients.",
+      "Glassmorphism overlays MUST include backdrop-blur-xl (min 16px) with saturation boost backdrop-saturate-150 and crisp 1px border_subtle."
+    ]
+  },
+  "layout_and_grid": {
+    "spacing_philosophy": "Generous Spacing (2-3x normal). Page sections separated by py-24 to py-36 (96px - 144px). Containers use p-6 to p-12.",
+    "bento_grid_mode": "Tetris Bento Mode (Asymmetric 12-column layout)",
+    "grid_classes": "grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8",
+    "project_card_spans": [
+      "Project 1 (FilingLens - Hero Project): col-span-12 md:col-span-8",
+      "Project 2 (FoodBridge - Impact Showcase): col-span-12 md:col-span-4",
+      "Project 3 (FairLoan - FinTech Analytics): col-span-12 md:col-span-5",
+      "Project 4 (Fund_Predictor - ML Engine): col-span-12 md:col-span-7"
+    ],
+    "container_max_width": "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+  },
+  "motion_and_effects": {
+    "smooth_scroll": "Lenis Smooth Scroll mandatory across entire page for inertia and luxury weight.",
+    "hero_kinetic_reveal": "Masked line-by-line slide-up reveal for name 'Vivek Nishad' on page load, followed by role badge and action triggers.",
+    "custom_cursor": "Dual-ring magnetic trailing cursor with blend mode backdrop-difference and hover expansion state on interactive cards and buttons.",
+    "noise_texture": "Fixed SVG noise grain overlay with 0.03 opacity spanning full viewport z-50 pointer-events-none.",
+    "editorial_marquee": "react-fast-marquee strip with slow speed (25px/s), featuring bold outlined display text ('COMPUTER SCIENCE HONS // MACHINE LEARNING // FULL STACK ARCHITECTURE // DISTRIBUTED SYSTEMS //').",
+    "framer_motion_variants": {
+      "fade_up": {
+        "initial": { "opacity": 0, "y": 40 },
+        "animate": { "opacity": 1, "y": 0 },
+        "transition": { "duration": 0.8, "ease": [0.16, 1, 0.3, 1] }
+      },
+      "stagger_container": {
+        "animate": { "transition": { "staggerChildren": 0.12 } }
+      }
+    }
+  },
+  "creative_3d_element": {
+    "type": "Interactive Three.js Canvas / WebGL Mesh Field",
+    "description": "Subtle 3D kinetic wireframe sphere / particle wave responding to mouse movement in Hero background with floating depth layer.",
+    "lighting": "Adequate directional rim light + ambient illumination to make geometry look sharp and metallic against dark obsidian background.",
+    "fallback": "Smooth animated SVG noise grid with ambient glowing radial gradient if WebGL context is deferred."
+  },
+  "image_urls": {
+    "hero_abstract_texture": {
+      "url": "https://images.unsplash.com/photo-1709625862266-014ef072fd93?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "alt": "Dark 3D architectural ribbon mesh texture",
+      "placement": "Hero background depth accent / project background card 1"
+    },
+    "project_filinglens": {
+      "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "alt": "FilingLens Document & Legal Filing Analytics Dashboard",
+      "placement": "Featured Project Card 1 (FilingLens)"
+    },
+    "project_foodbridge": {
+      "url": "https://images.unsplash.com/photo-1593113646773-028c64a8f1b8?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "alt": "FoodBridge Food Donation & Logistics Platform",
+      "placement": "Featured Project Card 2 (FoodBridge)"
+    },
+    "project_fairloan": {
+      "url": "https://images.unsplash.com/photo-1634097537825-b446635b2f7f?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "alt": "FairLoan Lending Bias & Credit Risk Visualizer",
+      "placement": "Featured Project Card 3 (FairLoan)"
+    },
+    "project_fund_predictor": {
+      "url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "alt": "Fund Predictor ML Neural Matrix & Data Analytics Engine",
+      "placement": "Featured Project Card 4 (Fund_Predictor)"
+    }
+  },
+  "components_architecture": [
+    {
+      "name": "Navigation Bar",
+      "path": "src/components/Navbar.js",
+      "description": "Sticky blurred glassmorphism header featuring custom original SVG logo mark for Vivek Nishad, quick links to Projects, About, Skills, Contact, and live availability beacon ('Open for Roles 2026').",
+      "key_elements": [
+        "SVG Logo Mark: Monogram 'VN' geometric minimalist vector logo inside sharp rounded square.",
+        "Desktop Links: // 01. WORK, // 02. ABOUT, // 03. SKILLS, // 04. CONTACT.",
+        "CTA Button: 'Resume / Contact' pill button with kinetic glow hover state.",
+        "data-testid requirement: nav-logo, nav-link-projects, nav-link-about, nav-link-skills, nav-link-contact, nav-cta-resume."
+      ]
+    },
+    {
+      "name": "Kinetic Hero Section",
+      "path": "src/components/Hero.js",
+      "description": "High-impact editorial hero with line-by-line masked reveal animation for name 'VIVEK NISHAD', subtitle highlighting CS Hons degree, interactive 3D particle canvas background, and quick metrics bar.",
+      "key_elements": [
+        "Masked Line 1: 'COMPUTER SCIENCE HONS GRADUATE'",
+        "Masked Line 2: 'VIVEK NISHAD'",
+        "Masked Line 3: 'Building intelligent data engines, fair algorithms & scalable Web applications.'",
+        "Quick Metrics: 4 Major Full-Stack & ML Projects, CS (Hons) Graduate, Open for Engineering Roles.",
+        "Action Triggers: 'Explore Selected Work' primary button + GitHub / LinkedIn icon links.",
+        "data-testid requirement: hero-title-name, hero-subtitle, hero-cta-projects, hero-github-link, hero-linkedin-link."
+      ]
+    },
+    {
+      "name": "Editorial Marquee Strip",
+      "path": "src/components/MarqueeStrip.js",
+      "description": "Slow continuous horizontal drift featuring low-contrast display typography separating Hero from Projects section.",
+      "key_elements": [
+        "Uses react-fast-marquee library.",
+        "Dark muted background with subtle border-y border-white/10.",
+        "Items: FULL STACK ARCHITECTURE • MACHINE LEARNING • FILING LENS • FOOD BRIDGE • FAIR LOAN • FUND PREDICTOR • CS HONS 2026."
+      ]
+    },
+    {
+      "name": "Selected Works Section (Projects Bento Grid)",
+      "path": "src/components/Projects.js",
+      "description": "Editorial 4-card showcase of Vivek's signature projects using Tetris Bento logic, spotlight clipped-frame imagery, tech stack pills, problem statement, key feature bullet points, and live GitHub/Demo buttons.",
+      "projects_detail": [
+        {
+          "id": "filinglens",
+          "title": "FilingLens",
+          "category": "Document & Filing Analysis Tool",
+          "tech_stack": ["Python", "FastAPI", "React", "NLP", "OCR Parsing"],
+          "description": "Automated legal and financial document analysis tool capable of dissecting multi-page regulatory filings, extracting key risk clauses, and generating structured visual summaries.",
+          "image": "project_filinglens"
+        },
+        {
+          "id": "foodbridge",
+          "title": "FoodBridge",
+          "category": "Food Donation & Logistics Platform",
+          "tech_stack": ["React", "Node.js", "Geospatial API", "MongoDB", "Real-time Sockets"],
+          "description": "Community food distribution bridge connecting surplus food donors (restaurants/events) with local shelters, optimizing transit routes to reduce food waste.",
+          "image": "project_foodbridge"
+        },
+        {
+          "id": "fairloan",
+          "title": "FairLoan",
+          "category": "Fair Lending & Risk Analysis Engine",
+          "tech_stack": ["Python", "Scikit-Learn", "React", "Recharts", "XGBoost"],
+          "description": "Machine learning system for detecting algorithmic bias in loan approvals, evaluating creditworthiness with explainable AI (SHAP values) for equitable lending.",
+          "image": "project_fairloan"
+        },
+        {
+          "id": "fund_predictor",
+          "title": "Fund_Predictor",
+          "category": "ML Fund & Financial Forecasting Tool",
+          "tech_stack": ["Python", "PyTorch", "Pandas", "FastAPI", "Tailwind CSS"],
+          "description": "Quantitative ML model predicting venture capital and mutual fund trajectories using historical financial indicators, sentiment analysis, and market trend vectors.",
+          "image": "project_fund_predictor"
+        }
+      ],
+      "key_elements": [
+        "Spotlight hover card effect with border highlight.",
+        "Direct GitHub code link buttons.",
+        "data-testid requirement: project-card-filinglens, project-card-foodbridge, project-card-fairloan, project-card-fund_predictor, project-github-button-*."
+      ]
+    },
+    {
+      "name": "About & Education Section",
+      "path": "src/components/About.js",
+      "description": "Split narrative showcase presenting Vivek's CS (Hons) background, core engineering philosophy, academic achievements, and problem-solving methodology.",
+      "key_elements": [
+        "Degree highlight: Computer Science (Hons) Graduate.",
+        "Core Philosophy: 'Combining mathematical rigor with intuitive UI craftsmanship.'",
+        "Key Highlights: Machine Learning specialization, System Architecture focus, Open Source enthusiast.",
+        "data-testid requirement: about-section-title, about-degree-chip, about-bio-text."
+      ]
+    },
+    {
+      "name": "Skills & Tech Stack Matrix",
+      "path": "src/components/Skills.js",
+      "description": "Categorized high-density interactive grid detailing Languages, Frameworks, ML/Data Tools, and Developer Tools with interactive hover descriptions.",
+      "categories": [
+        "Languages: Python, JavaScript (ES6+), TypeScript, C++, SQL, HTML5/CSS3",
+        "Frameworks & Web: React.js, FastAPI, Node.js, Express, Tailwind CSS, REST APIs",
+        "ML & Data Science: PyTorch, Scikit-Learn, TensorFlow, Pandas, NumPy, OpenCV",
+        "Tools & Cloud: Git, GitHub, Docker, Postman, Linux/Unix, Vercel"
+      ],
+      "key_elements": [
+        "Icon badges using lucide-react and react-icons.",
+        "data-testid requirement: skill-category-languages, skill-category-frameworks, skill-category-ml, skill-category-tools."
+      ]
+    },
+    {
+      "name": "Experience & Projects Timeline",
+      "path": "src/components/Timeline.js",
+      "description": "Vertical line-traced experience and academic milestones sequence featuring interactive expanders and date tags.",
+      "key_elements": [
+        "Milestones: CS Hons Graduation, Lead Developer on FilingLens & FairLoan, ML Research Project Fund_Predictor, Open Source Contributions.",
+        "data-testid requirement: timeline-container, timeline-item-*."
+      ]
+    },
+    {
+      "name": "Contact & Connect Section",
+      "path": "src/components/Contact.js",
+      "description": "Awwwards-style massive footer call-to-action featuring large headline 'LET'S BUILD SOMETHING EXTRAORDINARY', followed by clean link buttons for Email, LinkedIn, GitHub, Instagram placeholder, and Mobile Phone placeholder.",
+      "user_specified_links": {
+        "email": "viveknishad21bb07@gmail.com (or mailto link)",
+        "linkedin": "https://linkedin.com/in/vivek-nishad-21bb071b2/",
+        "github": "https://github.com/Vivekvib",
+        "instagram": "instagram.com/viveknishad (visible placeholder link)",
+        "mobile_phone": "+91 98765 43210 (visible placeholder call link)"
+      },
+      "key_elements": [
+        "Interactive link cards with hover magnetic translate and copy-to-clipboard functionality for email/phone.",
+        "Visible placeholder tags explicitly marked for recruiters and hiring managers.",
+        "data-testid requirement: contact-email-button, contact-linkedin-button, contact-github-button, contact-instagram-button, contact-phone-button."
+      ]
+    },
+    {
+      "name": "Custom Dual Cursor & Noise Overlay",
+      "path": "src/components/CustomCursor.js & src/components/NoiseOverlay.js",
+      "description": "Global motion utility providing smooth cursor follower with state changes over links/cards and viewport noise texture.",
+      "key_elements": [
+        "data-testid requirement: custom-cursor, noise-overlay."
+      ]
+    }
+  ],
+  "accessibility_and_testing": {
+    "apca_contrast": "All body text meets APCA standard with light gray #F4F4F7 on #08080A (contrast > 12:1). Accent text uses bright warm orange (#FF4F00) against dark surfaces.",
+    "keyboard_navigation": "Focus rings styled with explicit 2px solid #FF4F00 outline and outline-offset-2.",
+    "reduced_motion": "All Framer Motion animations strictly respect prefers-reduced-motion media query via motion controls.",
+    "data_testid_convention": "kebab-case role-based attributes attached to every interactive button, input, link, navigation item, project card, and contact link."
+  },
+  "UNIVERSAL GUIDELINES FOR MAIN AGENT": [
+    "You MUST NOT apply universal transitions like 'transition: all' in CSS, as it breaks Framer Motion transform animations. Use explicit property transitions e.g. 'transition: opacity 0.2s ease, background-color 0.2s ease'.",
+    "DO NOT center align the app container or body (no text-align: center on App container). Keep editorial left alignment.",
+    "All header/navbar drop-downs or sticky bars MUST have a non-transparent background (use backdrop-blur-xl bg-[#08080A]/80 border-b border-white/10) to prevent text overlap during scrolling.",
+    "DO NOT use placeholder image URLs like via.placeholder.com. Use ONLY the curated high-resolution unsplash URLs provided in the 'image_urls' section.",
+    "Every key interactive element MUST carry a descriptive data-testid attribute for automated testing validation.",
+    "Ensure Lenis smooth scroll is wrapped at the top level in App.js with proper cleanup on unmount.",
+    "Create a memorable original SVG logo mark for Vivek Nishad ('VN' monogram with geometric lines) and inject it into public/index.html as favicon as well as Navbar logo."
+  ]
+}
