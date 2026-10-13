@@ -234,7 +234,7 @@ export default function ProjectDetail() {
           >
             <SectionLabel>Repository Structure</SectionLabel>
             <p className="mt-4 max-w-2xl text-sm leading-relaxed text-[#9E9EA9]">
-              No public deployment for this prototype — the monorepo layout below is the primary artefact. Explore the full source on GitHub.
+              Monorepo layout from the README — product artefacts (PRD, persona, journey map) ship alongside the code. Explore the full source on GitHub.
             </p>
             <div className="mt-6 overflow-x-auto rounded-2xl border border-white/10 bg-[#101014] p-6">
               {project.repoTree.map(([path, note]) => (

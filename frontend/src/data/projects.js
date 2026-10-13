@@ -127,8 +127,8 @@ export const PROJECTS = [
     ],
     tech: ["Next.js 14", "FastAPI", "PostgreSQL", "SQLAlchemy"],
     github: "https://github.com/Vivekvib/Fairloan",
-    live: null,
-    meta: { timeline: "Sep 2026", role: "Product + Full-Stack — Solo", status: "Prototype · synthetic data only" },
+    live: "https://frontend-ruby-ten-67.vercel.app/",
+    meta: { timeline: "Sep 2026", role: "Product + Full-Stack — Solo", status: "Live prototype · synthetic data" },
     problem:
       "Digital lending in India is riddled with dark patterns — hidden fees, pre-checked consent, countdown-timer pressure. FairLoan asks what a lending product looks like when it is designed around the borrower's comprehension instead of the lender's conversion rate, using RBI's Digital Lending Guidelines as the spec.",
     built: [
@@ -154,7 +154,10 @@ export const PROJECTS = [
       { k: "3", v: "regulatory label types" },
       { k: "100%", v: "synthetic data" },
     ],
-    gallery: [],
+    gallery: [
+      { src: "/shots/fairloan-1.png", alt: "FairLoan — landing page with full cost disclosure and typical-app comparison" },
+      { src: "/shots/fairloan-2.png", alt: "FairLoan — eligibility pre-check, step 1 of 5" },
+    ],
     repoTree: [
       ["fairloan/", ""],
       ["├── frontend/", "Next.js 14 (App Router) + Tailwind CSS + shadcn/ui"],
