@@ -1,16 +1,12 @@
 import { useEffect } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Lenis from "lenis";
 import { Toaster } from "sonner";
 import NoiseOverlay from "@/components/NoiseOverlay";
 import CustomCursor from "@/components/CustomCursor";
 import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import MarqueeStrip from "@/components/MarqueeStrip";
-import Projects from "@/components/Projects";
-import About from "@/components/About";
-import Skills from "@/components/Skills";
-import Timeline from "@/components/Timeline";
-import Contact from "@/components/Contact";
+import Home from "@/Home";
+import ProjectDetail from "@/components/ProjectDetail";
 
 export default function App() {
   useEffect(() => {
@@ -30,20 +26,17 @@ export default function App() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-[#08080A] text-[#F4F4F7]">
-      <NoiseOverlay />
-      <CustomCursor />
-      <Navbar />
-      <main>
-        <Hero />
-        <MarqueeStrip />
-        <Projects />
-        <About />
-        <Skills />
-        <Timeline />
-        <Contact />
-      </main>
-      <Toaster theme="dark" position="bottom-right" />
-    </div>
+    <BrowserRouter>
+      <div className="relative min-h-screen bg-[#08080A] text-[#F4F4F7]">
+        <NoiseOverlay />
+        <CustomCursor />
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/work/:projectId" element={<ProjectDetail />} />
+        </Routes>
+        <Toaster theme="dark" position="bottom-right" />
+      </div>
+    </BrowserRouter>
   );
 }

@@ -1,86 +1,7 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, Github } from "lucide-react";
-
-const PROJECTS = [
-  {
-    id: "filinglens",
-    num: "001",
-    title: "FilingLens",
-    category: "Agentic RAG over SEC 10-K Filings",
-    span: "md:col-span-8",
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=srgb&fm=jpg&q=85",
-    alt: "FilingLens — financial filings analytics dashboard",
-    description:
-      "Agentic RAG system that reads real SEC 10-K filings from EDGAR and generates structured risk memos grounded only in retrieved evidence. A deterministic fact-check layer validates every management-narrative claim against XBRL-reported financials before it's allowed to say \u201cverified\u201d.",
-    bullets: [
-      "Live /analyze for any US ticker, ~15s end-to-end",
-      "Narrative-vs-numbers consistency checker",
-      "22 pytest tests covering ratio & grounding logic",
-    ],
-    tech: ["Python", "FastAPI", "ChromaDB", "Groq LLM", "scikit-learn"],
-    github: "https://github.com/Vivekvib/FilingLens",
-    live: "https://filing-lens-ruby.vercel.app/",
-  },
-  {
-    id: "foodbridge",
-    num: "002",
-    title: "FoodBridge",
-    category: "Real-Time Food Surplus Marketplace",
-    span: "md:col-span-4",
-    image:
-      "https://images.unsplash.com/photo-1593113646773-028c64a8f1b8?crop=entropy&cs=srgb&fm=jpg&q=85",
-    alt: "FoodBridge — food donation logistics",
-    description:
-      "Zero Hunger. Zero Waste. A marketplace connecting surplus food from restaurants with NGOs and shelters — dual-role auth, in-app chat, GPS-pinned listings and live countdown timers.",
-    bullets: [
-      "Split-claiming spins off new listings automatically",
-      "Deployed with Gunicorn on Render",
-    ],
-    tech: ["Flask", "PostgreSQL", "Gunicorn", "Render"],
-    github: "https://github.com/Vivekvib/FoodBridge",
-    live: "https://foodbridge-dev.onrender.com/",
-  },
-  {
-    id: "fairloan",
-    num: "003",
-    title: "FairLoan",
-    category: "Transparent Digital Lending Prototype",
-    span: "md:col-span-5",
-    image:
-      "https://images.unsplash.com/photo-1634097537825-b446635b2f7f?crop=entropy&cs=srgb&fm=jpg&q=85",
-    alt: "FairLoan — transparent lending interface",
-    description:
-      "A responsible-lending prototype built on RBI Digital Lending Guidelines — plain-language cost disclosure, explainable risk decisions, privacy-first analytics, and zero dark patterns. All money math in Decimal, never floats.",
-    bullets: [
-      "Comprehension-before-conversion UX",
-      "Explainable, auditable credit decisions",
-    ],
-    tech: ["Next.js 14", "FastAPI", "PostgreSQL", "SQLAlchemy"],
-    github: "https://github.com/Vivekvib/Fairloan",
-    live: null,
-  },
-  {
-    id: "fund_predictor",
-    num: "004",
-    title: "Fund Predictor",
-    category: "Systemic Liquidity Contagion & Fund Herding Engine",
-    span: "md:col-span-7",
-    image:
-      "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?crop=entropy&cs=srgb&fm=jpg&q=85",
-    alt: "Fund Predictor — quantitative risk engine",
-    description:
-      "A quant pipeline that empirically measures hidden liquidity risk in Indian small & mid-cap mutual funds. Amihud Illiquidity, Days-to-Liquidate and Price Impact models on 90 days of live NSE data, with an interactive stress-test command center.",
-    bullets: [
-      "Simulate redemption shocks & fire-sale spirals",
-      "Fuzzy entity matching over messy AMFI disclosures",
-      "Grades fund managers: herd followers vs contrarians",
-    ],
-    tech: ["Python", "Pandas", "yfinance", "Chart.js", "Vercel"],
-    github: "https://github.com/Vivekvib/Fund_Predictor",
-    live: "https://fund-predictor.vercel.app/",
-  },
-];
+import { ArrowUpRight, FileText, Github } from "lucide-react";
+import { Link } from "react-router-dom";
+import { PROJECTS } from "@/data/projects";
 
 const cardVariants = {
   hidden: { opacity: 0, y: 48 },
@@ -109,7 +30,7 @@ function ProjectCard({ p, index }) {
       onMouseMove={onMove}
       className={`spotlight-card group col-span-12 flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#101014] transition-colors duration-300 hover:border-white/25 ${p.span}`}
     >
-      <div className="relative overflow-hidden">
+      <Link to={`/work/${p.id}`} className="relative block overflow-hidden" aria-label={`${p.title} case study`}>
         <img
           src={p.image}
           alt={p.alt}
@@ -126,7 +47,7 @@ function ProjectCard({ p, index }) {
             Live
           </span>
         )}
-      </div>
+      </Link>
 
       <div className="relative z-10 flex flex-1 flex-col p-6 sm:p-8">
         <p className="font-mono2 text-[11px] uppercase tracking-[0.25em] text-[#FF4F00]">
@@ -154,7 +75,14 @@ function ProjectCard({ p, index }) {
             </span>
           ))}
         </div>
-        <div className="mt-6 flex items-center gap-3 border-t border-white/10 pt-5">
+        <div className="mt-6 flex flex-wrap items-center gap-3 border-t border-white/10 pt-5">
+          <Link
+            data-testid={`project-case-study-${p.id}`}
+            to={`/work/${p.id}`}
+            className="flex items-center gap-2 rounded-full bg-[#F4F4F7] px-4 py-2 font-mono2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#08080A] transition-colors duration-300 hover:bg-[#FF4F00]"
+          >
+            <FileText className="h-3.5 w-3.5" /> Case Study
+          </Link>
           <a
             data-testid={`project-github-button-${p.id}`}
             href={p.github}
@@ -170,7 +98,7 @@ function ProjectCard({ p, index }) {
               href={p.live}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-1.5 rounded-full bg-[#F4F4F7] px-4 py-2 font-mono2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#08080A] transition-colors duration-300 hover:bg-[#FF4F00]"
+              className="flex items-center gap-1.5 rounded-full border border-white/15 px-4 py-2 font-mono2 text-[10px] uppercase tracking-[0.2em] text-[#C6C6CF] transition-colors duration-300 hover:border-[#FF4F00] hover:text-[#FF4F00]"
             >
               Live Demo <ArrowUpRight className="h-3.5 w-3.5" />
             </a>

@@ -35,17 +35,17 @@ const LINKS = [
     id: "instagram",
     icon: Instagram,
     label: "Instagram",
-    value: "handle coming soon",
-    href: null,
-    placeholder: true,
+    value: "@vivek_._nishad",
+    href: "https://www.instagram.com/vivek_._nishad/",
+    external: true,
   },
   {
     id: "phone",
     icon: Phone,
     label: "Mobile",
-    value: "+91 · number coming soon",
-    href: null,
-    placeholder: true,
+    value: "+91 74285 54431",
+    href: "tel:+917428554431",
+    external: false,
   },
 ];
 
@@ -107,10 +107,6 @@ export default function Contact() {
                 </span>
                 {l.copy ? (
                   <Copy className="h-4 w-4 shrink-0 text-[#5C5C66]" />
-                ) : l.placeholder ? (
-                  <span className="shrink-0 rounded-full border border-white/10 px-2.5 py-1 font-mono2 text-[9px] uppercase tracking-[0.15em] text-[#5C5C66]">
-                    Placeholder
-                  </span>
                 ) : (
                   <ArrowUpRight className="h-4 w-4 shrink-0 text-[#5C5C66] transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-[#FF4F00]" />
                 )}
@@ -126,22 +122,16 @@ export default function Contact() {
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.7, delay: i * 0.07, ease: [0.16, 1, 0.3, 1] }}
               >
-                {l.href ? (
-                  <a
-                    data-testid={`contact-${l.id}-button`}
-                    href={l.href}
-                    target={l.external ? "_blank" : undefined}
-                    rel={l.external ? "noreferrer" : undefined}
-                    onClick={l.copy ? (e) => { e.preventDefault(); copyEmail(); } : undefined}
-                    className={cls}
-                  >
-                    {inner}
-                  </a>
-                ) : (
-                  <div data-testid={`contact-${l.id}-button`} className={cls} data-cursor-hover>
-                    {inner}
-                  </div>
-                )}
+                <a
+                  data-testid={`contact-${l.id}-button`}
+                  href={l.href}
+                  target={l.external ? "_blank" : undefined}
+                  rel={l.external ? "noreferrer" : undefined}
+                  onClick={l.copy ? (e) => { e.preventDefault(); copyEmail(); } : undefined}
+                  className={cls}
+                >
+                  {inner}
+                </a>
               </motion.div>
             );
           })}
