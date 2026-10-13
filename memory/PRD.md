@@ -25,8 +25,19 @@ CS (Hons) graduate (Vivek Nishad, University of Delhi) needs a "cool" portfolio 
 - Lenis smooth scroll, custom cursor (fine-pointer only), noise grain overlay, custom VN favicon
 - Verified: webpack compiles clean, no console errors, screenshots at 375/768/1366, all links/testids present
 
+## Implemented (2026-10-13) — Iteration 2
+- Navbar Resume button (`nav-cta-resume`) downloads `/Vivek_Nishad_Resume.pdf` (served from frontend/public, verified 200 application/pdf)
+- React Router: `/` (Home) + `/work/:projectId` (ProjectDetail). Homepage project cards navigate to case studies.
+- Case-study pages for all 4 projects, data in `src/data/projects.js`: problem, metrics, what-I-built, architecture pipeline diagram, engineering decisions, stack, screenshots gallery, next-project link, 404 fallback.
+  - FilingLens: 3 README screenshots (GitHub user-attachments) + live capture `/shots/filinglens-live.png`
+  - FoodBridge: live capture `/shots/foodbridge-1.png`
+  - Fund Predictor: 2 live captures + "The Models" formula cards (Amihud / DTL / Price Impact)
+  - FairLoan: no live deployment or README screenshots exist → disclaimer banner + Repository Structure block (`case-study-repo-tree`) derived from README; no fabricated images
+- Contact: real phone `tel:+917428554431` (+91 74285 54431) and Instagram `https://www.instagram.com/vivek_._nishad/`; placeholder UI removed
+- Verified by testing agent: /app/test_reports/iteration_1.json — all 11 checks pass (routes, images load, resume download, next/back nav, contact links, 404, mobile 390px no overflow)
+
 ## Backlog
-- P0: User to supply real Instagram handle + mobile number (currently placeholders in Contact.js)
-- P1: Resume PDF download button in Navbar ("Hire Me" currently scrolls to contact)
 - P1: Working contact form (user deferred; chose links only)
-- P2: Blog/writing section, dark/light toggle, project detail pages with screenshots from repos
+- P2: Blog/writing section, dark/light toggle
+- P2: FairLoan screenshots if the user later deploys it or adds images to the README
+- P2: OG/social share meta image for link previews

@@ -1,0 +1,23 @@
+{
+  "summary": "Frontend-only testing of Vivek Nishad portfolio (React static site). All 11 requested feature checks pass: Resume PDF (200/application-pdf) with download attr; 4 case-study routes render with correct testids/titles/GitHub links; images on filinglens(4/4), foodbridge(1/1), fund_predictor(2/2) all load (naturalWidth>0); fairloan correctly omits live link and shows disclaimer + repoTree; fund_predictor 'The Models' section shows all 3 formula cards; next-project link cycles filinglens->foodbridge->fairloan->fund_predictor->filinglens with scroll-to-top; case-study back navigates to / and scrolls to work section (scrollY=1066); navbar nav-link-about from case-study scrolls to about on home; unknown route /work/doesnotexist shows 'Project not found.'; contact phone is <a href=tel:+917428554431> showing +91 74285 54431; instagram is <a href=https://www.instagram.com/vivek_._nishad/ target=_blank>; email copy shows sonner toast 'Email copied to clipboard'; no 'Placeholder' text anywhere; mobile 390px /work/fund_predictor has no horizontal overflow (scrollWidth==clientWidth==390). Homepage project cards are <article> elements (not <a>) but click handlers navigate correctly via useNavigate.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": [
+      {"screen": "Global (console)", "issues": ["Repeated Lenis warning: 'Please ensure that the container has a non-static position, like relative/fixed/absolute to ensure scroll offset is calculated correctly.' Non-blocking but noisy; consider adding position: relative to the Lenis wrapper/body element."]}
+    ]
+  },
+  "test_report_links": [],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "Project cards use <article> with onClick+useNavigate rather than <a href>; functional but worsens accessibility & right-click 'open in new tab'. Consider wrapping in <Link> for better semantics/SEO.",
+    "Lenis smooth-scroll emits a warning about container position being static. Add `position: relative` to the wrapper to silence and ensure correct offset math."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (skipped)", "frontend": "100%"},
+  "seed_data_creation": "None",
+  "retest_needed": false,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "All 11 review-request checks verified against production preview URL. Resume PDF served at /Vivek_Nishad_Resume.pdf (200, application/pdf). All 4 case-study routes (/work/filinglens|foodbridge|fairloan|fund_predictor) render required testids. Images under /shots/*.png all load. Only cosmetic console warning from Lenis about container position."
+}
