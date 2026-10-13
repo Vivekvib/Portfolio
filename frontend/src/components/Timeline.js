@@ -23,7 +23,7 @@ const ITEMS = [
   },
   {
     date: "AUG 2023 — JUN 2026",
-    role: "President → Joint Secretary → Junior Executive",
+    role: "Junior Executive → Joint Secretary → President",
     org: "E-Cell, Dyal Singh College",
     points: [
       "Led a 120-member organization across content, partnerships, logistics & programs; secured 5+ sponsorships worth INR 2.3L.",

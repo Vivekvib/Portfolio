@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowDown, ArrowUpRight, Github, Linkedin } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Github, Instagram, Linkedin } from "lucide-react";
 import { scrollToId } from "@/components/Navbar";
 
 function ParticleField() {
@@ -209,6 +209,16 @@ export default function Hero() {
             className="flex h-12 w-12 items-center justify-center rounded-full border border-white/15 text-[#9E9EA9] transition-colors duration-300 hover:border-[#FF4F00] hover:text-[#FF4F00]"
           >
             <Linkedin className="h-5 w-5" />
+          </a>
+          <a
+            data-testid="hero-instagram-link"
+            href="https://www.instagram.com/vivek_._nishad/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Instagram profile"
+            className="flex h-12 w-12 items-center justify-center rounded-full border border-white/15 text-[#9E9EA9] transition-colors duration-300 hover:border-[#FF4F00] hover:text-[#FF4F00]"
+          >
+            <Instagram className="h-5 w-5" />
           </a>
         </motion.div>
 
